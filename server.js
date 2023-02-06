@@ -5,8 +5,8 @@ const Strategy = require('passport-facebook').Strategy
 
 var port = process.env.PORT || 3000;
 passport.use(new Strategy({
-    clientID: "512314004339653",
-    clientSecret: "57ad39f377d321f332782c143b091993",
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     callbaclURL: "https://naughty-pantsuit-tick.cyclic.app/login/facebook/callback"
     },
     function (accessToken, refreshToken, profile, cb) {
