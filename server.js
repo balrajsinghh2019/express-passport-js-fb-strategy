@@ -7,7 +7,7 @@ var port = process.env.PORT || 3000;
 passport.use(new Strategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbaclURL: "https://naughty-pantsuit-tick.cyclic.app/login/facebook/callback"
+    callbackURL: "https://naughty-pantsuit-tick.cyclic.app/login/facebook/callback"
     },
     function (accessToken, refreshToken, profile, cb) {
         return cb(null, profile)
