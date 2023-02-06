@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const passport = require('passport')
 const Strategy = require('passport-facebook').Strategy
@@ -6,7 +7,7 @@ var port = process.env.PORT || 3000;
 passport.use(new Strategy({
     clientID: "512314004339653",
     clientSecret: "57ad39f377d321f332782c143b091993",
-    callbaclURL: "http://localhost:3000/auth/facebook/callback"
+    callbaclURL: "http://localhost:"+port+"/auth/facebook/callback"
     },
     function (accessToken, refreshToken, profile, cb) {
         return cb(null, profile)
